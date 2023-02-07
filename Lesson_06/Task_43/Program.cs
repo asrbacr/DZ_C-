@@ -31,7 +31,7 @@ int UserInput()
     return number;
 }
 
-//Ну да мне было интересно как это сделать, поэтому я спросил.
+// Ну да мне было интересно как это сделать, поэтому я спросил.
 (double, double) IntersectionValue(double k1, double k2, double b1, double b2) 
 {
     return (((b2 - b1) / (k1 - k2)), (k2 * (b2 - b1) / (k1 - k2) + b2));

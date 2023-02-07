@@ -5,11 +5,59 @@
 
 
 //___code
-
+/*
 Console.Write("Сколько эл-ов будет в массиве: ");
 int M = UserInput();
-
 int[] Array = FillArray(M);
+*/
+
+System.Console.WriteLine("Введите числа через пробел");
+// string userInputData = UserInput();
+
+// string[] s = userInputData.Split(' ');
+
+System.Console.Write("Введите данные:");
+string? numbers = Console.ReadLine();
+
+string[] INPUTING(string numbers) 
+{
+    string[] array = numbers.Split(' ');
+
+    foreach (var arr in array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = arr;
+            System.Console.WriteLine(array[i]);
+        }
+    }
+    return array;
+}
+
+Console.WriteLine(INPUTING(numbers));
+/*
+// int[] FillArray(int a)
+// {
+//     int[] AddNumbArrya = new int[a];
+//     for (int i = 0; i < AddNumbArrya.Length; i++)
+//     {
+//         System.Console.Write($"Введите {i + 1} элемент: ");
+//         AddNumbArrya[i] = UserInput();
+//     }
+//     return AddNumbArrya;
+// }
+
+// int[] NewArray(string a)
+// {
+//     int[] AddNumbArrya = new int[];
+
+//     foreach (var array in AddNumbArrya)
+//     {
+//         AddNumbArrya[i] = 
+//     }
+
+// }
+
 
 int Res = CountPositiv(Array);
 
@@ -23,25 +71,25 @@ else
 
 //____funcs
 
-int UserInput()
-{
-    int number;
-    while (!int.TryParse(Console.ReadLine(), out number))
-        Console.Write("Вы ввели не число. Повторите ввод: ");
+// string UserInput()
+// {
+//     int number;
+//     while (!int.TryParse(Console.ReadLine(), out number))
+//         Console.Write("Вы ввели не число. Повторите ввод: ");
 
-    return number;
-}
+//     return number;
+// }
 
-int[] FillArray(int a)
-{
-    int[] AddNumbArrya = new int[a];
-    for (int i = 0; i < AddNumbArrya.Length; i++)
-    {
-        System.Console.Write($"Введите {i + 1} элемент: ");
-        AddNumbArrya[i] = UserInput();
-    }
-    return AddNumbArrya;
-}
+// int[] FillArray(int a)
+// {
+//     int[] AddNumbArrya = new int[a];
+//     for (int i = 0; i < AddNumbArrya.Length; i++)
+//     {
+//         System.Console.Write($"Введите {i + 1} элемент: ");
+//         AddNumbArrya[i] = UserInput();
+//     }
+//     return AddNumbArrya;
+// }
 
 void PrintArray(int[] arr)
 {
@@ -67,3 +115,4 @@ int CountPositiv(int[] array)
     }
     return count;
 }
+*/
