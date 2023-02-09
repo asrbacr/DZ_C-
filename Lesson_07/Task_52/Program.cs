@@ -3,10 +3,10 @@
 
 //___cod
 
-int[,] array = GenerateArray(3, 4, 0, 8);
+int[,] array = GenerateArray(4, 4, 0, 8);
 PrintArray2D(array);
 
-double[]arr = AverColumnArray(array);
+double[] arr = AverColumnArray(array);
 System.Console.Write("Средние значения столбцов: ");
 PrintArray(arr);
 
@@ -28,7 +28,7 @@ void PrintArray(double[] array) //вывод
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i] + " ");
+        Console.Write(array[i].ToString("####.###") + " ");
     }
 }
 
@@ -48,27 +48,17 @@ int[,] GenerateArray(int m, int n, int min, int max) //генерация
     return arrNum;
 }
 
-int UserInput()
-{
-    int number;
-    while (!int.TryParse(Console.ReadLine(), out number))
-        Console.Write("Вы ввели не число. Повторите ввод: ");
-
-    return number;
-}
-
 double[] AverColumnArray(int[,] array)
 {
     double[] newArray = new double[array.GetLength(1)];
-    double SredNumbs = 0;
     for (int j = 0; j < array.GetLength(1); j++)
     {
+        double SredNumbs = 0;
         for (int i = 0; i < array.GetLength(0); i++)
         {
-            SredNumbs += array[i,j];
+            SredNumbs += array[i, j];
         }
-        //SredNumbs / array.GetLength(1);
-        newArray[j] = SredNumbs / array.GetLength(1);
+        newArray[j] = SredNumbs / (array.GetLength(1));
     }
     return newArray;
 }
