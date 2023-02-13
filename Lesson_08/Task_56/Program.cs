@@ -1,9 +1,10 @@
 ﻿//____code
 
-int[,] array = GenerateArray(3, 4, 1, 9);
+int[,] array = GenerateArray(6, 2, 1, 9);
 PrintArray2D(array);
-
-
+System.Console.WriteLine();
+System.Console.Write("Наименьшая сумма находится в ");
+LineMinSum(array);
 
 //___func
 
@@ -35,28 +36,25 @@ void PrintArray2D(int[,] array) //вывод
     }
 }
 
-int[] AverColumnArray(int[,] array)
+void LineMinSum(int[,] array)
 {
-    int[] newArray = new int[array.GetLength(0)];
-
-    int SredNumbs = 0;
+    int minLine = 0;
+    int minSumLine = 0;
+    int sumLine = 0;
+    for (int i = 0; i < array.GetLength(1); i++)
+    {
+        minLine += array[0, i];
+    }
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
+            sumLine += array[i, j];
+        if (sumLine < minLine)
         {
-            SredNumbs += array[i, j];
+            minLine = sumLine;
+            minSumLine = i;
         }
-        newArray[i] = SredNumbs;
+        sumLine = 0;
     }
-    return newArray;
-}
-
-int SerchMinIndex(int[] array)
-{
-    int indMin = 0;
-    int numMin = array[0];
-    for (int i = 0; i < array.Length; i++)
-    {
-
-    }
+    Console.Write($"{minSumLine + 1} строке");
 }
