@@ -6,8 +6,6 @@ System.Console.WriteLine();
 SortArray(array);
 PrintArray2D(array);
 
-
-
 //__func
 
 void PrintArray2D(int[,] array) //вывод
@@ -38,24 +36,25 @@ int[,] GenerateArray(int m, int n, int min, int max) //генерация
     return arrNum;
 }
 
-
 int[,] SortArray(int[,] array)
 {
-    int max = array[0, 0];
-    int[,] newArray = new int[array.GetLength(0), array.GetLength(1)];
+    // int max = array[0, 0];
+    // int[,] newArray = new int[array.GetLength(0), array.GetLength(1)];
 
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (max < array[i, j])
+            for (int k = 0; k < array.GetLength(1) - 1; k++)
             {
-                max = array[i, j];
-                newArray[i, j] = max;
+                if (array[i, k] < array[i, k + 1])
+                {
+                    int temp = array[i, k + 1];
+                    array[i, k + 1] = array[i, k];
+                    array[i, k] = temp;
+                }
             }
-            // else
-            //   newArray[i, j] = array[i, j];
         }
     }
-    return newArray;
+    return array;
 }
