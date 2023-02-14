@@ -1,6 +1,6 @@
 ﻿//____code
 
-int[,] array = GenerateArray(6, 2, 1, 9);
+int[,] array = GenerateArray(6, 4, 1, 9);
 PrintArray2D(array);
 System.Console.WriteLine();
 System.Console.Write("Наименьшая сумма находится в ");
