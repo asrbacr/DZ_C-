@@ -22,17 +22,17 @@ void PrintArray(int[,,] array)
 
 void FillArray(int[,,] array)
 {
-
-    int count = 7;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
             for (int k = 0; k < array.GetLength(2); k++)
             {
-                array[k, i, j] += count;
-                count += 3;
+                int count = new Random().Next(10, 100);
+                array[k, i, j] = count;
             }
         }
     }
 }
+
+
