@@ -15,16 +15,13 @@ int SummElements(int M, int N)
 {
     int summ = M;
     if (M == N)
-    {
         return 0;
-    }
     else
     {
         M++;
         summ = M + SummElements(M, N);
         return summ;
     }
-
 }
 
 int UserInput()
